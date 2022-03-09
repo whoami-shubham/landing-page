@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <style>
+      .swiper {
+        width: 90%;
+        height: 600px;
+      }
+      .swiper-slide{
+          max-width: 360px;
+          height: 430px;
+          overflow: scroll;
+      }
+      .swiper-button-next::after {
+        margin-top: -1em;
+        margin-left: 1em;
+        font-size: 30px;
+      }
+      .swiper-button-prev::after {
+        margin-top: -1em;
+        margin-right: 1em;
+        font-size: 30px;
+      }
+      .swiper-scrollbar {
+        display: none;
+      }
+      .avatar{
+          width: 100%;
+          height: 170px;
+          object-fit: cover;
+      }
+      .h-292{
+          height: 292px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="text-gray-600 body-font py-24">
+      <div class="container px-5  mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h2
+            class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
+            id="subheading"
+          >
+            ROOF PARTY POLAROID
+          </h2>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900" id="heading">
+            Master Cleanse Reliac Heirloom
+          </h1>
+        </div>
+
+      </div>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+         
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+      <button
+        id="cta"
+        class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+      >
+        Schedule Appointment
+      </button>
+    </section>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
