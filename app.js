@@ -1,45 +1,8 @@
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "horizontal",
-//   loop: true,
-  slidesPerView: 3,
 
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
+const swiperWrapper = document.querySelector(".owl-carousel");
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    // when window width is >= 480px
-    678: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    // when window width is >= 640px
-    1000: {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
-  },
-});
-
-const swiperWrapper = document.querySelector(".swiper-wrapper");
-
+// set initial data
 function setInitialMetaData(title, heading, subheading, ctaLabel, ctaUrl) {
   document.title = `${title}`;
   document.getElementById("heading").innerText = `${heading}`;
@@ -48,6 +11,7 @@ function setInitialMetaData(title, heading, subheading, ctaLabel, ctaUrl) {
   document.getElementById("cta").addEventListener("click", () => {
     window.location = `${ctaUrl}`;
   });
+  
 }
 const {
   documentTitle,
@@ -70,7 +34,7 @@ function createCard(
   experties
 ) {
   const div = document.createElement("div");
-  div.classList.add("swiper-slide");
+  div.classList.add(["swiper-slide", "item"]);
   div.innerHTML = `
        <div class="p-4">
          <div class="flex items-center">
@@ -102,7 +66,7 @@ function createCard(
              <h3>Consultancy fee : <span class="text-green-500">${charge}</span> </h3>
              <h3 class="text-indigo-500">${firstConsultationFree}</h3>
              <a class="mt-3 text-indigo-500 inline-flex items-center" href="${linkedin}">
-               <img src="${linkedinImg}" alt="linkedin icon" width="40px" height="40px" />
+               <img class="linkedin-img" src="${linkedinImg}" alt="linkedin icon" width="40px" height="40px" />
              </a>
            </div>
          </div>
@@ -126,3 +90,20 @@ profiles.forEach((profile) => {
   );
 });
 setInitialMetaData(documentTitle, heading, subheading, ctaLabel, ctaUrl);
+
+$('.owl-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  nav:true,
+  responsive:{
+      0:{
+          items:1
+      },
+      600:{
+          items:2
+      },
+      1000:{
+          items:3
+      }
+  }
+})
